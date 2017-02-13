@@ -13,7 +13,7 @@ import java.util.List;
  */
 
 @Entity
-public class User {
+public class UserOur {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long userId;
@@ -28,7 +28,7 @@ public class User {
 //    @UpdateTimestamp
 //    private Date updated;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "userOur", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonManagedReference
     private List<Photo> photoList;
 

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import ua.org.myko.system.model.User;
-import ua.org.myko.system.service.UserService;
+import ua.org.myko.system.model.UserOur;
+import ua.org.myko.system.service.UserOurService;
 
 import javax.servlet.ServletException;
 import java.util.Date;
@@ -22,7 +22,7 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    private UserService userService;
+    private UserOurService userOurService;
 
     @RequestMapping(value="login", method = RequestMethod.POST)
     public String login(@RequestBody Map<String, String> json) throws
@@ -34,12 +34,12 @@ public class UserController {
         String userName = json.get("username");
         String password = json.get("password");
 
-        User user= userService.findByUserName(userName);
-        if (user==null) {
+        UserOur userOur = userOurService.findByUserName(userName);
+        if (userOur ==null) {
             throw new ServletException("User name not found.");
         }
 
-        String pwd = user.getPassword();
+        String pwd = userOur.getPassword();
 
         if(!password.equals(pwd)) {
             throw new ServletException("Invalid login. Please check your name and password");
@@ -50,8 +50,8 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public User registerUser(@RequestBody User user) {
-        return userService.save(user);
+    public UserOur registerUser(@RequestBody UserOur userOur) {
+        return userOurService.save(userOur);
     }
 
 

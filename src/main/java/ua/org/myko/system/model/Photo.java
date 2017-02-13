@@ -28,7 +28,7 @@ public class Photo {
 
     @ManyToOne
     @JsonBackReference
-    private User user;
+    private UserOur userOur;
 
 //    @ManyToMany(mappedBy = "likedPhotoList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    @JsonIgnore
@@ -95,12 +95,12 @@ public class Photo {
         this.commentList = commentList;
     }
 
-    public User getUser() {
-        return user;
+    public UserOur getUserOur() {
+        return userOur;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserOur(UserOur userOur) {
+        this.userOur = userOur;
     }
 
 //    public List<User> getLikedUserList() {

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.org.myko.system.dao.PhotoDao;
 import ua.org.myko.system.model.Photo;
-import ua.org.myko.system.model.User;
+import ua.org.myko.system.model.UserOur;
 import ua.org.myko.system.service.PhotoService;
 
 import java.util.List;
@@ -27,8 +27,8 @@ public class PhotoServiceImpl implements PhotoService {
         return photoDao.findAll();
     }
 
-    public List<Photo> findByUser(User user) {
-        return photoDao.findByUser(user);
+    public List<Photo> findByUserOur(UserOur userOur) {
+        return photoDao.findByUserOur(userOur);
     }
 
     public Photo findByPhotoId(Long photoId) {

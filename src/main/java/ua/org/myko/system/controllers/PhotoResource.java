@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import ua.org.myko.system.model.Photo;
-import ua.org.myko.system.model.User;
+import ua.org.myko.system.model.UserOur;
 import ua.org.myko.system.service.CommentService;
 import ua.org.myko.system.service.PhotoService;
 
@@ -61,8 +61,8 @@ public class PhotoResource {
     }
 
     @RequestMapping(value="/photo/user", method = RequestMethod.POST)
-    public List<Photo> getPhotosByUser (@RequestBody User user) {
-        return photoService.findByUser(user);
+    public List<Photo> getPhotosByUser (@RequestBody UserOur userOur) {
+        return photoService.findByUserOur(userOur);
     }
 
     @RequestMapping(value="/photo/photoId", method = RequestMethod.POST)

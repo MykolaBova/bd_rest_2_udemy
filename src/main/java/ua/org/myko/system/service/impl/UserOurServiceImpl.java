@@ -3,8 +3,8 @@ package ua.org.myko.system.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.org.myko.system.dao.UserDao;
-import ua.org.myko.system.model.User;
-import ua.org.myko.system.service.UserService;
+import ua.org.myko.system.model.UserOur;
+import ua.org.myko.system.service.UserOurService;
 
 import java.util.List;
 
@@ -13,21 +13,21 @@ import java.util.List;
  */
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserOurServiceImpl implements UserOurService {
 
     @Autowired
     private UserDao userDao;
 
-    public List<User> findAllUsers() {
+    public List<UserOur> findAllUsers() {
         return userDao.findAll();
     }
 
-    public User findByUserName(String userName) {
+    public UserOur findByUserName(String userName) {
         return userDao.findByUserName(userName);
     }
 
-    public User save(User user) {
-        return userDao.save(user);
+    public UserOur save(UserOur userOur) {
+        return userDao.save(userOur);
     }
 
 

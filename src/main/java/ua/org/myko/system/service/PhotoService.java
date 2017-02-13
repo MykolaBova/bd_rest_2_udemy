@@ -2,7 +2,7 @@ package ua.org.myko.system.service;
 
 
 import ua.org.myko.system.model.Photo;
-import ua.org.myko.system.model.User;
+import ua.org.myko.system.model.UserOur;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface PhotoService {
 
     List<Photo> findAll();
 
-    List<Photo> findByUser(User user);
+    List<Photo> findByUserOur(UserOur userOur);
 
     Photo findByPhotoId(Long photoId);
 

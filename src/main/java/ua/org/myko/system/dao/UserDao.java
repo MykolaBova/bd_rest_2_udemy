@@ -2,7 +2,7 @@ package ua.org.myko.system.dao;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ua.org.myko.system.model.User;
+import ua.org.myko.system.model.UserOur;
 
 import java.util.List;
 
@@ -11,12 +11,12 @@ import java.util.List;
  */
 
 @Repository
-public interface UserDao extends CrudRepository<User, Long> {
-    List<User> findAll();
+public interface UserDao extends CrudRepository<UserOur, Long> {
+    List<UserOur> findAll();
 
-    User findByUserName(String userName);
+    UserOur findByUserName(String userName);
 
-    User findByUserId(Long userId);
+    UserOur findByUserId(Long userId);
 
-    User save(User user);
+    UserOur save(UserOur userOur);
 }

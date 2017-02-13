@@ -3,7 +3,7 @@ package ua.org.myko.system.dao;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import ua.org.myko.system.model.Photo;
-import ua.org.myko.system.model.User;
+import ua.org.myko.system.model.UserOur;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public interface PhotoDao extends CrudRepository<Photo, Long> {
     Photo save(Photo photo);
 
-    List<Photo> findByUser(User user);
+    List<Photo> findByUserOur(UserOur userOur);
 
     List<Photo> findAll();
 
